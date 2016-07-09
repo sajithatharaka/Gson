@@ -29,6 +29,7 @@ public class ProjectGson {
         String s = "{name:'Sajitha',id:'ST-001',date:'2016-07-09',age:24,subjects:['Maths','English'],module:{id:'MD00-CS',name:'Secure Systems'}}";
 
         Student student = (Student) GsonManager.getContext(compositeObjectAdapterMap, s, Student.class);
+        //============= Used Reflection - Not Important
         printTheFields(student);
     }
 
@@ -36,9 +37,16 @@ public class ProjectGson {
         try {
             Field[] fields = Student.class.getDeclaredFields();
             for (Field field : fields) {
-                field.setAccessible(true);
-                Object newObj = field.get(student);
-                System.out.println(field.getName() + " :" + newObj);
+                if (field.getName().equals("module")) {
+                    Object newObj = field.get(student);
+                    Module module = (Module) newObj;
+                    System.out.println(field.getName()+".id" + " :" + module.getId());
+                    System.out.println(field.getName()+".name" + " :" + module.getName());
+                } else {
+                    field.setAccessible(true);
+                    Object newObj = field.get(student);
+                    System.out.println(field.getName() + " :" + newObj);
+                }
             }
         } catch (Exception e) {
             System.out.println("Exception : " + e.getMessage());
