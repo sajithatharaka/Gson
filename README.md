@@ -44,3 +44,5 @@ How to use
 
         String student = GsonSerilaizeManager.getContext(compositeObjectAdapterMap, s,true);
         System.out.println(student);
+        
+###Dependencies : gson.jar (used version:2.2.2)
