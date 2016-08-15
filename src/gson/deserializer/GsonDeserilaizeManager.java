@@ -1,4 +1,4 @@
-package gson;
+package gson.deserializer;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -11,7 +11,7 @@ import java.util.Map;
  * @Data : N/A
  * @Description : N/A
  */
-public class GsonManager {
+public class GsonDeserilaizeManager {
 
     public static Gson createGsonBuilder(Map<Type, Object> compositeObjectAdapterMap) {
         GsonBuilder gsonBuilder = new GsonBuilder();
