@@ -17,7 +17,7 @@ How to use
         //============= Used Reflection - Not Important
         printTheFields(student);
 
-##Generic Java Pojo Parser To Write Json String
+##Generic Java Pojo Parser To Output Json String
 
 This is to write json files and therefore have defined only SerializerAdapter.
 
