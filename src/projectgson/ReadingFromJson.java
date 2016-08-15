@@ -1,8 +1,8 @@
 package projectgson;
 
-import gson.DateDeserializerAdapter;
-import gson.GsonManager;
-import gson.ModuleDeserializerAdapter;
+import gson.deserializer.DateDeserializerAdapter;
+import gson.deserializer.GsonDeserilaizeManager;
+import gson.deserializer.ModuleDeserializerAdapter;
 import java.lang.reflect.Field;
 import java.lang.reflect.Type;
 import java.util.Date;
@@ -17,7 +17,7 @@ import sample.pojo.Student;
  * @Data : N/A
  * @Description : N/A
  */
-public class ProjectGson {
+public class ReadingFromJson {
 
     public static void main(String[] args) {
         //============= Map of Composite Objects ============================================================
@@ -28,7 +28,7 @@ public class ProjectGson {
         //============= Instead of Json file, Json String is passed =========================================
         String s = "{name:'Sajitha',id:'ST-001',date:'2016-07-09',age:24,subjects:['Maths','English'],module:{id:'MD00-CS',name:'Secure Systems'}}";
 
-        Student student = (Student) GsonManager.getContext(compositeObjectAdapterMap, s, Student.class);
+        Student student = (Student) GsonDeserilaizeManager.getContext(compositeObjectAdapterMap, s, Student.class);
         //============= Used Reflection - Not Important
         printTheFields(student);
     }
