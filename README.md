@@ -45,4 +45,4 @@ How to use
         String student = GsonSerilaizeManager.getContext(compositeObjectAdapterMap, s,true);
         System.out.println(student);
         
-###Dependencies : gson.jar (used version:2.2.2)
+###Dependencies : <a href='http://www.java2s.com/Code/Jar/j/Downloadjsonlib222jdk15jar.htm'>gson.jar</a> (used version:2.2.2)
