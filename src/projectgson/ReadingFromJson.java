@@ -32,13 +32,14 @@ public class ReadingFromJson {
         //============= Used Reflection - Not Important
         printTheFields(student);
     }
-
-    public static void printTheFields(Student student) {
+    // As a good practise this should be moved to a seperate module
+    private static void printTheFields(Student student) {
         try {
             Field[] fields = Student.class.getDeclaredFields();
             for (Field field : fields) {
                 if (field.getName().equals("module")) {
-                    Object newObj = field.get(student);
+                    field.setAccessible(true);
+                    Object newObj = field.get(student);                    
                     Module module = (Module) newObj;
                     System.out.println(field.getName()+".id" + " :" + module.getId());
                     System.out.println(field.getName()+".name" + " :" + module.getName());
@@ -49,6 +50,7 @@ public class ReadingFromJson {
                 }
             }
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println("Exception : " + e.getMessage());
         }
     }

@@ -41,7 +41,7 @@ public class WritingToJson {
         s.setModule(m);
         s.setSubjects(subjects);
 
-        String student = GsonSerilaizeManager.getContext(compositeObjectAdapterMap, s,true);
+        String student = GsonSerilaizeManager.getJsonString(compositeObjectAdapterMap, s,true);
         System.out.println(student);
 
     }

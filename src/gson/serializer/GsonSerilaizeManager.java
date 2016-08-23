@@ -29,7 +29,7 @@ public class GsonSerilaizeManager {
         return gson;
     }
 
-    public static String getContext(Map<Type, Object> compositeObjectAdapterMap, Student student, boolean isPrettyPrinting) {
+    public static String getJsonString(Map<Type, Object> compositeObjectAdapterMap, Student student, boolean isPrettyPrinting) {
         Gson gson = createGsonBuilder(compositeObjectAdapterMap, isPrettyPrinting);
         return gson.toJson(student);
     }
