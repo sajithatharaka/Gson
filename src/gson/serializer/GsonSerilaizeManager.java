@@ -23,7 +23,9 @@ public class GsonSerilaizeManager {
             //===================================
         }
         // =============Adding Composite Objects to the Gson Builder=================
-        compositeObjectAdapterMap.forEach((Type t, Object object) -> gsonBuilder.registerTypeAdapter(t, object));
+        if (compositeObjectAdapterMap != null) {
+            compositeObjectAdapterMap.forEach((Type t, Object object) -> gsonBuilder.registerTypeAdapter(t, object));
+        }
         // =============Java 8 -> Lambda Expressions have been used==================
         Gson gson = gsonBuilder.create();
         return gson;
